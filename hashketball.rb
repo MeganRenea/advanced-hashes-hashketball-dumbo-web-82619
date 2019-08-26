@@ -63,8 +63,8 @@ def player_numbers (team)
   hash = game_hash
   hash.reduce([]) do |numbers, (home_or_away, stats)|
     if hash[home_or_away][:team_name] == team
-      hash[home_or_away][:players].each do |player|
-      numbers << player.values[0][:number]
+      hash[home_or_away][:players].each do |player, stats|
+      numbers << stats[:number]
       end
     end
   numbers
